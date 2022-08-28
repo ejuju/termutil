@@ -39,7 +39,8 @@ func (app *App) Run(args []string) error {
 		}
 	}
 
-	return command.Func(app.config.Controller, args[1:])
+	err := command.Func(app.config.Controller, args[1:])
+	return fmt.Errorf("failed to run command %s: %w", args[0], err)
 }
 
 type AppConfig struct {
