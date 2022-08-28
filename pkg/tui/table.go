@@ -19,7 +19,7 @@ type TableConfig struct {
 	CellHorizontalPadding int
 	ColumnTitleStyle      []ansi.EscapeCode
 	RowStyle              []ansi.EscapeCode
-	CharacterSet          stringutil.BoxDrawingCharacters
+	CharacterSet          *stringutil.BoxDrawingCharacters
 }
 
 const (
@@ -56,6 +56,11 @@ func NewTable(config TableConfig) (*Table, error) {
 		if width <= 0 {
 			config.ColumnWidths[i] = DefaultTableColumnWidth
 		}
+	}
+
+	// set default character set if needed
+	if config.CharacterSet == nil {
+		config.CharacterSet = &stringutil.BoxDrawingCharactersSingleLine
 	}
 
 	// check for missing cells

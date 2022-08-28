@@ -5,7 +5,6 @@ import (
 
 	"github.com/ejuju/fake"
 	"github.com/ejuju/termutil/pkg/ansi"
-	"github.com/ejuju/termutil/pkg/stringutil"
 	"github.com/ejuju/termutil/pkg/tui"
 )
 
@@ -24,7 +23,6 @@ func main() {
 		CellHorizontalPadding: 1,
 		ColumnTitleStyle:      []ansi.EscapeCode{ansi.EscapeCodeBold},
 		RowStyle:              []ansi.EscapeCode{},
-		CharacterSet:          stringutil.BoxDrawingCharactersSingleLine,
 	})
 	if err != nil {
 		panic(err)

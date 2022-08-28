@@ -18,6 +18,19 @@ const (
 	charVerticalRightIntersectionSingleLine      = "├"
 	charVerticalLeftIntersectionSingleLine       = "┤"
 
+	// Box drawing - bold line
+	charHorizontalBoldLine                     = "━"
+	charVerticalBoldLine                       = "┃"
+	charTopLeftCornerBoldLine                  = "┏"
+	charTopRightCornerBoldLine                 = "┓"
+	charBottomLeftCornerBoldLine               = "┗"
+	charBottomRightCornerBoldLine              = "┛"
+	charVerticalRightIntersectionBoldLine      = "┣"
+	charVerticalLeftIntersectionBoldLine       = "┫"
+	charHorizontalBottomIntersectionBoldLine   = "┳"
+	charHorizontalTopIntersectionBoldLine      = "┻"
+	charVerticalHorizontalIntersectionBoldLine = "╋"
+
 	// Box drawing - double line
 	charHorizontalDoubleLine                     = "═"
 	charVerticalDoubleLine                       = "║"
@@ -58,6 +71,20 @@ var BoxDrawingCharactersSingleLine = BoxDrawingCharacters{
 	CharHorizontalBottomIntersectionLine: charHorizontalBottomIntersectionSingleLine,
 	CharHorizontalTopIntersectionLine:    charHorizontalTopIntersectionSingleLine,
 	CharCrossIntersectionLine:            charVerticalHorizontalIntersectionSingleLine,
+}
+
+var BoxDrawingCharactersBoldLine = BoxDrawingCharacters{
+	CharHorizontalLine:                   charHorizontalBoldLine,
+	CharVerticalLine:                     charVerticalBoldLine,
+	CharTopLeftCornerLine:                charTopLeftCornerBoldLine,
+	CharTopRightCornerLine:               charTopRightCornerBoldLine,
+	CharBottomLeftCornerLine:             charBottomLeftCornerBoldLine,
+	CharBottomRightCornerLine:            charBottomRightCornerBoldLine,
+	CharVerticalRightIntersectionLine:    charVerticalRightIntersectionBoldLine,
+	CharVerticalLeftIntersectionLine:     charVerticalLeftIntersectionBoldLine,
+	CharHorizontalBottomIntersectionLine: charHorizontalBottomIntersectionBoldLine,
+	CharHorizontalTopIntersectionLine:    charHorizontalTopIntersectionBoldLine,
+	CharCrossIntersectionLine:            charVerticalHorizontalIntersectionBoldLine,
 }
 
 var BoxDrawingCharactersDoubleLine = BoxDrawingCharacters{
