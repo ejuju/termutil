@@ -1,0 +1,4 @@
+github.com/ejuju/fake v0.0.5 h1:IWXia5smF8hkzp4eGumEzMlrPzJCofVTVfuh2UNLkvA=
+github.com/ejuju/fake v0.0.5/go.mod h1:7YLhoXAsk+4kya6FMcDxB0OKyUR8db+dXDUYjTA8f08=
+github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
+github.com/google/uuid v1.3.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
