@@ -32,60 +32,72 @@ const (
 	charVerticalHorizontalIntersectionDoubleLine = "╬"
 )
 
-type BoxDrawingCharacterSet struct {
-	CharHorizontalLine                     string
-	CharVerticalLine                       string
-	CharTopLeftCornerLine                  string
-	CharTopRightCornerLine                 string
-	CharBottomLeftCornerLine               string
-	CharBottomRightCornerLine              string
-	CharVerticalRightIntersectionLine      string
-	CharVerticalLeftIntersectionLine       string
-	CharHorizontalBottomIntersectionLine   string
-	CharHorizontalTopIntersectionLine      string
-	CharVerticalHorizontalIntersectionLine string
+type BoxDrawingCharacters struct {
+	CharHorizontalLine                   string
+	CharVerticalLine                     string
+	CharTopLeftCornerLine                string
+	CharTopRightCornerLine               string
+	CharBottomLeftCornerLine             string
+	CharBottomRightCornerLine            string
+	CharVerticalRightIntersectionLine    string
+	CharVerticalLeftIntersectionLine     string
+	CharHorizontalBottomIntersectionLine string
+	CharHorizontalTopIntersectionLine    string
+	CharCrossIntersectionLine            string
 }
 
-var BoxDrawingSetSingleLine = BoxDrawingCharacterSet{
-	CharHorizontalLine:                     charHorizontalSingleLine,
-	CharVerticalLine:                       charVerticalSingleLine,
-	CharTopLeftCornerLine:                  charTopLeftCornerSingleLine,
-	CharTopRightCornerLine:                 charTopRightCornerSingleLine,
-	CharBottomLeftCornerLine:               charBottomLeftCornerSingleLine,
-	CharBottomRightCornerLine:              charBottomRightCornerSingleLine,
-	CharVerticalRightIntersectionLine:      charVerticalRightIntersectionSingleLine,
-	CharVerticalLeftIntersectionLine:       charVerticalLeftIntersectionSingleLine,
-	CharHorizontalBottomIntersectionLine:   charHorizontalBottomIntersectionSingleLine,
-	CharHorizontalTopIntersectionLine:      charHorizontalTopIntersectionSingleLine,
-	CharVerticalHorizontalIntersectionLine: charVerticalHorizontalIntersectionSingleLine,
+var BoxDrawingCharactersSingleLine = BoxDrawingCharacters{
+	CharHorizontalLine:                   charHorizontalSingleLine,
+	CharVerticalLine:                     charVerticalSingleLine,
+	CharTopLeftCornerLine:                charTopLeftCornerSingleLine,
+	CharTopRightCornerLine:               charTopRightCornerSingleLine,
+	CharBottomLeftCornerLine:             charBottomLeftCornerSingleLine,
+	CharBottomRightCornerLine:            charBottomRightCornerSingleLine,
+	CharVerticalRightIntersectionLine:    charVerticalRightIntersectionSingleLine,
+	CharVerticalLeftIntersectionLine:     charVerticalLeftIntersectionSingleLine,
+	CharHorizontalBottomIntersectionLine: charHorizontalBottomIntersectionSingleLine,
+	CharHorizontalTopIntersectionLine:    charHorizontalTopIntersectionSingleLine,
+	CharCrossIntersectionLine:            charVerticalHorizontalIntersectionSingleLine,
 }
 
-var BoxDrawingSetDoubleLine = BoxDrawingCharacterSet{
-	CharHorizontalLine:                     charHorizontalDoubleLine,
-	CharVerticalLine:                       charVerticalDoubleLine,
-	CharTopLeftCornerLine:                  charTopLeftCornerDoubleLine,
-	CharTopRightCornerLine:                 charTopRightCornerDoubleLine,
-	CharBottomLeftCornerLine:               charBottomLeftCornerDoubleLine,
-	CharBottomRightCornerLine:              charBottomRightCornerDoubleLine,
-	CharVerticalRightIntersectionLine:      charVerticalRightIntersectionDoubleLine,
-	CharVerticalLeftIntersectionLine:       charVerticalLeftIntersectionDoubleLine,
-	CharHorizontalBottomIntersectionLine:   charHorizontalBottomIntersectionDoubleLine,
-	CharHorizontalTopIntersectionLine:      charHorizontalTopIntersectionDoubleLine,
-	CharVerticalHorizontalIntersectionLine: charVerticalHorizontalIntersectionDoubleLine,
+var BoxDrawingCharactersDoubleLine = BoxDrawingCharacters{
+	CharHorizontalLine:                   charHorizontalDoubleLine,
+	CharVerticalLine:                     charVerticalDoubleLine,
+	CharTopLeftCornerLine:                charTopLeftCornerDoubleLine,
+	CharTopRightCornerLine:               charTopRightCornerDoubleLine,
+	CharBottomLeftCornerLine:             charBottomLeftCornerDoubleLine,
+	CharBottomRightCornerLine:            charBottomRightCornerDoubleLine,
+	CharVerticalRightIntersectionLine:    charVerticalRightIntersectionDoubleLine,
+	CharVerticalLeftIntersectionLine:     charVerticalLeftIntersectionDoubleLine,
+	CharHorizontalBottomIntersectionLine: charHorizontalBottomIntersectionDoubleLine,
+	CharHorizontalTopIntersectionLine:    charHorizontalTopIntersectionDoubleLine,
+	CharCrossIntersectionLine:            charVerticalHorizontalIntersectionDoubleLine,
 }
 
-var BoxDrawingSetHorizontalOnly = BoxDrawingCharacterSet{
-	CharHorizontalLine:                     charHorizontalSingleLine,
-	CharVerticalLine:                       "",
-	CharTopLeftCornerLine:                  "",
-	CharTopRightCornerLine:                 "",
-	CharBottomLeftCornerLine:               "",
-	CharBottomRightCornerLine:              "",
-	CharVerticalRightIntersectionLine:      "",
-	CharVerticalLeftIntersectionLine:       "",
-	CharHorizontalBottomIntersectionLine:   charHorizontalSingleLine,
-	CharHorizontalTopIntersectionLine:      charHorizontalSingleLine,
-	CharVerticalHorizontalIntersectionLine: charHorizontalSingleLine,
+var BoxDrawingCharactersHorizontalOnly = BoxDrawingCharacters{
+	CharHorizontalLine:                   charHorizontalSingleLine,
+	CharVerticalLine:                     "",
+	CharTopLeftCornerLine:                "",
+	CharTopRightCornerLine:               "",
+	CharBottomLeftCornerLine:             "",
+	CharBottomRightCornerLine:            "",
+	CharVerticalRightIntersectionLine:    "",
+	CharVerticalLeftIntersectionLine:     "",
+	CharHorizontalBottomIntersectionLine: charHorizontalSingleLine,
+	CharHorizontalTopIntersectionLine:    charHorizontalSingleLine,
+	CharCrossIntersectionLine:            charHorizontalSingleLine,
 }
 
-var BoxDrawingSetNone = BoxDrawingCharacterSet{}
+var BoxDrawingCharactersWhiteSpace = BoxDrawingCharacters{
+	CharHorizontalLine:                   " ",
+	CharVerticalLine:                     "",
+	CharTopLeftCornerLine:                "",
+	CharTopRightCornerLine:               "",
+	CharBottomLeftCornerLine:             "",
+	CharBottomRightCornerLine:            "",
+	CharVerticalRightIntersectionLine:    "",
+	CharVerticalLeftIntersectionLine:     "",
+	CharHorizontalBottomIntersectionLine: " ",
+	CharHorizontalTopIntersectionLine:    " ",
+	CharCrossIntersectionLine:            " ",
+}

@@ -19,7 +19,7 @@ type TableConfig struct {
 	CellHorizontalPadding int
 	ColumnTitleStyle      []ansi.EscapeCode
 	RowStyle              []ansi.EscapeCode
-	CharacterSet          stringutil.BoxDrawingCharacterSet
+	CharacterSet          stringutil.BoxDrawingCharacters
 }
 
 const (
@@ -122,7 +122,7 @@ func (t *Table) String() string {
 		if i >= numColumns-1 {
 			break
 		}
-		divider += t.config.CharacterSet.CharVerticalHorizontalIntersectionLine
+		divider += t.config.CharacterSet.CharCrossIntersectionLine
 	}
 	divider += t.config.CharacterSet.CharVerticalLeftIntersectionLine + stringutil.CharLineReturn
 

@@ -8,7 +8,7 @@ import (
 )
 
 type ConfirmationPrompt struct {
-	config ConfirmationPromptConfig
+	config *ConfirmationPromptConfig
 }
 
 type ConfirmationPromptConfig struct {
@@ -17,7 +17,10 @@ type ConfirmationPromptConfig struct {
 	Question string
 }
 
-func NewConfirmationPrompt(config ConfirmationPromptConfig) *ConfirmationPrompt {
+func NewConfirmationPrompt(config *ConfirmationPromptConfig) *ConfirmationPrompt {
+	if config == nil {
+		config = &ConfirmationPromptConfig{}
+	}
 	if config.StdOut == nil {
 		config.StdOut = os.Stdout
 	}

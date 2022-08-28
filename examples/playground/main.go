@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	ok, err := tui.NewConfirmationPrompt(tui.ConfirmationPromptConfig{}).Exec()
+	ok, err := tui.NewConfirmationPrompt(nil).Exec()
 	if err != nil {
 		panic(err)
 	}

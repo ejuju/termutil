@@ -24,7 +24,7 @@ func main() {
 		CellHorizontalPadding: 1,
 		ColumnTitleStyle:      []ansi.EscapeCode{ansi.EscapeCodeBold},
 		RowStyle:              []ansi.EscapeCode{},
-		CharacterSet:          stringutil.BoxDrawingSetSingleLine,
+		CharacterSet:          stringutil.BoxDrawingCharactersSingleLine,
 	})
 	if err != nil {
 		panic(err)
