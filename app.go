@@ -76,7 +76,10 @@ func (app *App) Run(args []string) error {
 	}
 
 	err := command.Func(app.config.Controller, args[1:])
-	return fmt.Errorf("failed to run command \"%s\": %w", args[0], err)
+	if err != nil {
+		return fmt.Errorf("failed to run command \"%s\": %w", args[0], err)
+	}
+	return nil
 }
 
 type Command struct {
