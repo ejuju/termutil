@@ -17,34 +17,7 @@ type App struct {
 	config AppConfig
 }
 
-// args will default to os.Args[:1] when set to nil
-func (app *App) Run(args []string) error {
-	// set default args if needed
-	if args == nil {
-		args = os.Args[1:]
-	}
-
-	command, ok := app.config.Commands[args[0]]
-	if !ok {
-		return fmt.Errorf("command \"%s\"not found", args[0])
-	}
-
-	if command.PromptConfirmationBeforeRun != nil {
-		ok, err := command.PromptConfirmationBeforeRun.Exec()
-		if err != nil {
-			return fmt.Errorf("unable to prompt confirmation before run: %w", err)
-		}
-		if !ok {
-			return nil
-		}
-	}
-
-	err := command.Func(app.config.Controller, args[1:])
-	return fmt.Errorf("failed to run command %s: %w", args[0], err)
-}
-
 type AppConfig struct {
-	Name       string
 	Controller Controller
 	Commands   map[string]*Command
 	Version    string
@@ -72,12 +45,38 @@ func NewApp(config AppConfig) (*App, error) {
 		config.Commands["version"] = &Command{
 			Description: "Prints the version of the app",
 			Func: func(ctrlr Controller, args []string) error {
-				return ctrlr.WriteOut(config.Version)
+				return ctrlr.WriteOut(config.Version + "\n")
 			},
 		}
 	}
 
 	return &App{config: config}, nil
+}
+
+// args will default to os.Args[:1] when set to nil
+func (app *App) Run(args []string) error {
+	// set default args if needed
+	if args == nil {
+		args = os.Args[1:]
+	}
+
+	command, ok := app.config.Commands[args[0]]
+	if !ok {
+		return fmt.Errorf("command \"%s\"not found", args[0])
+	}
+
+	if command.PromptConfirmationBeforeRun != nil {
+		ok, err := command.PromptConfirmationBeforeRun.Exec()
+		if err != nil {
+			return fmt.Errorf("unable to prompt confirmation before run: %w", err)
+		}
+		if !ok {
+			return nil
+		}
+	}
+
+	err := command.Func(app.config.Controller, args[1:])
+	return fmt.Errorf("failed to run command \"%s\": %w", args[0], err)
 }
 
 type Command struct {
